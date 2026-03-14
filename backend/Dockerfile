@@ -8,11 +8,11 @@ USER userbackend
 
 WORKDIR /app
 
-EXPOSE 8080
+EXPOSE $BACKEND_PORT
 
 HEALTHCHECK --interval=15s --timeout=3s --start-period=20s --retries=3 \
-  CMD curl -f http://localhost:8080 || exit 1
+  CMD curl -f http://localhost:$BACKEND_PORT || exit 1
 
 COPY . .
 
-CMD [ "python", "./main.py" ]
+CMD python ./main.py $BACKEND_PORT

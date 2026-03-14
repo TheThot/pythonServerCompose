@@ -1,5 +1,5 @@
 
-# Web-сервис на базе docker docker compose
+# Web-сервис
 Приложение представляет собой простой web-service
 
 + Использованы docker как инструмент виртуализации сервисов 
@@ -22,3 +22,7 @@
 Технологии: pyhon3 (backend), nginx (porxy service)
 
 ![image](testPythonDocker.png)
+
+Запуск командой docker-compose up -d --build
+
+Проверка работоспособности curl http://localhost

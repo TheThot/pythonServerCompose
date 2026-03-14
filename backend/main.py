@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
 import uvicorn
+import sys
 app = FastAPI()
 # @app.get("/", response_class=HTMLResponse)
 # async def read_root():
@@ -23,9 +23,10 @@ async def read_root():
     return "Hello from Effective Mobile!"
 
 if __name__ == "__main__":
+    val = int(sys.argv[1])
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=8080,
+        port=val,
         reload=True
     )
